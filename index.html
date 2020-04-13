@@ -46,10 +46,10 @@
 <script type="text/x-handlebars-template" id="tableTemplate">
 
    <table class="table table-striped">
-       <tr><th>Item</th><th>Meal</th><th>Category</th><th>Portion</th></tr>
+       <tr><th>Item</th><th>Major</th><th>Final</th></tr>
            {{#each rows}}
                <tr>
-                  <td>{{name}}</td><td>{{meal}}</td><td>{{category}}</td><td>{{portion}}</td>
+                  <td>{{name}}</td><td>{{major}}</td><td>{{final}}</td>
                </tr>
            {{/each}}
    </table>
@@ -60,7 +60,7 @@
 
 	function getData(selected_meal) {
 		var request = new XMLHttpRequest();
-    	request.open('GET', 'menu_items.json');     // open the request
+    	request.open('GET', 'cit5students.json');     // open the request
 
     	request.onload = function() {
 
