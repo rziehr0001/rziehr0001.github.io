@@ -67,7 +67,7 @@
         	var data = JSON.parse(request.responseText);
 			major_items = data.filter(getmajor)   // filter data for selected meal
 		
-			function getmajor(item) {
+			function getMajor(item) {
             	return item.major == selected_major;
         	}
 
@@ -75,7 +75,7 @@
               	var templateText = document.getElementById('tableTemplate').innerHTML;
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
-              	compiledHtml = compiledTemplateText({ rows: major_items })      // apply data to template
+              	compiledHtml = compiledTemplateText({ rows: cit5students })      // apply data to template
               	document.getElementById('menuTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
