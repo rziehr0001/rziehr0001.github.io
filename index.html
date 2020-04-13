@@ -46,10 +46,10 @@
 <script type="text/x-handlebars-template" id="tableTemplate">
 
    <table class="table table-striped">
-       <tr><th>Name</th><th>Major</th><th>Midterm</th><th>Final</th></tr>
+       <tr><th>Item</th><th>Meal</th><th>Category</th><th>Portion</th></tr>
            {{#each rows}}
                <tr>
-                  <td>{{name}}</td><td>{{major}}</td><td>{{midterm}}</td><td>{{final}}</td>
+                  <td>{{name}}</td><td>{{meal}}</td><td>{{category}}</td><td>{{portion}}</td>
                </tr>
            {{/each}}
    </table>
@@ -58,24 +58,24 @@
 //////////////////////////////////////
 <script>
 
-	function getData(selected_major) {
+	function getData(selected_meal) {
 		var request = new XMLHttpRequest();
-    	request.open('GET', 'cit5students.json');     // open the request
+    	request.open('GET', 'menu_items.json');     // open the request
 
     	request.onload = function() {
 
         	var data = JSON.parse(request.responseText);
-			major_items = data.filter(getmajor)   // filter data for selected meal
+			meal_items = data.filter(getMeal)   // filter data for selected meal
 		
-			function getMajor(item) {
-            	return item.major == selected_major;
+			function getMeal(item) {
+            	return item.meal == selected_meal;
         	}
 
         	if (request.status == 200) {
               	var templateText = document.getElementById('tableTemplate').innerHTML;
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
-              	compiledHtml = compiledTemplateText({ rows: major_items })      // apply data to template
+              	compiledHtml = compiledTemplateText({ rows: meal_items })      // apply data to template
               	document.getElementById('menuTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
