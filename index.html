@@ -65,17 +65,17 @@
     	request.onload = function() {
 
         	var data = JSON.parse(request.responseText);
-			meal_items = data.filter(getMeal)   // filter data for selected meal
+			meal_items = data.filter(getMajor)   // filter data for selected meal
 		
-			function getMeal(item) {
-            	return item.meal == selected_meal;
+			function getMajor(item) {
+            	return item.mmajor == selected_major;
         	}
 
         	if (request.status == 200) {
               	var templateText = document.getElementById('tableTemplate').innerHTML;
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
-              	compiledHtml = compiledTemplateText({ rows: meal_items })      // apply data to template
+              	compiledHtml = compiledTemplateText({ rows: major_items })      // apply data to template
               	document.getElementById('menuTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
