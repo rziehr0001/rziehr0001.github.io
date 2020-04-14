@@ -30,7 +30,7 @@
             </div>
       
   
-           <h3>We filter our dataset by meal</h3>
+           <h3>We filter our dataset by major</h3>
                 <div id="menuTable"></div>
                 
       
@@ -46,10 +46,10 @@
 <script type="text/x-handlebars-template" id="tableTemplate">
 
    <table class="table table-striped">
-       <tr><th>Item</th><th>Meal</th><th>Category</th><th>Portion</th></tr>
+       <tr><th>Item</th><th>Major</th><th>Category</th><th>Portion</th></tr>
            {{#each rows}}
                <tr>
-                  <td>{{name}}</td><td>{{meal}}</td><td>{{major}}</td><td>{{portion}}</td>
+                  <td>{{name}}</td><td>{{major}}</td><td>{{major}}</td><td>{{portion}}</td>
                </tr>
            {{/each}}
    </table>
@@ -58,24 +58,24 @@
   <!-- application ajax code -->
 <script>
 
-	function getData(selected_meal) {
+	function getData(selected_major) {
 		var request = new XMLHttpRequest();
     	request.open('GET', 'cit5students.json');     // open the request
 
     	request.onload = function() {
 
         	var data = JSON.parse(request.responseText);
-			meal_items = data.filter(getMeal)   // filter data for selected meal
+			major_items = data.filter(getMajor)   // filter data for selected major
 		
-			function getMeal(item) {
-            	return item.meal == selected_meal;
+			function getMajor(item) {
+            	return item.major == selected_major;
         	}
 
         	if (request.status == 200) {
               	var templateText = document.getElementById('tableTemplate').innerHTML;
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
-              	compiledHtml = compiledTemplateText({ rows: meal_items })      // apply data to template
+              	compiledHtml = compiledTemplateText({ rows: major_items })      // apply data to template
               	document.getElementById('menuTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
