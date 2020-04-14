@@ -3,7 +3,7 @@
   <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1">
-      <title>menu items</title>
+      <title>Major</title>
 	  
 	  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
       <!-- bootstrap on github   need to use https for these links -->
@@ -17,12 +17,10 @@
   <body>
   
      <div class="container">
-            <h2>Select a Menu</h2>
+            <h2>Select a Major</h2>
       
             <div style='padding: 5px;'>    
-               <button type='button' class="btn btn-primary" onClick="getData('breakfast')">Breakfast</button> 
-               <button type='button' class="btn btn-primary" onClick="getData('lunch')">Lunch</button> 
-               <button type='button' class="btn btn-primary" onClick="getData('dinner')">Dinner</button> 
+
 			   
 			   
 			   <button type='button' class="btn btn-primary" onClick="getData('CIT')">CIT</button> 
@@ -30,15 +28,8 @@
             </div>
       
   
-           <h3>We filter our dataset by major</h3>
-                <div id="menuTable"></div>
-                
-      
-           <p>Menu Data originally provided by  <a href='https://manual.cs50.net/api/food/'>manual.cs50.net/api/food/</a></p>
-		   <p>Items are from HUDS, which is the Harvard University Dining Services. The above link is very old, and no longer leads to information on the food API, and I can find no updated information on attribution.</p>
-           <p>CS 50 is a popular intro to computer science course offered by Harvard University.</p>       
-     
-     </div>   <!-- end class='container'   -->
+           <h3>We filter by major</h3>
+
   </body>
 
 
@@ -76,10 +67,10 @@
              	var compiledTemplateText = Handlebars.compile(templateText);   // get and compile template code
               	
               	compiledHtml = compiledTemplateText({ rows: major_items })      // apply data to template
-              	document.getElementById('menuTable').innerHTML = compiledHtml; 	
+              	document.getElementById('majorTable').innerHTML = compiledHtml; 	
        	 	}
         	else {
-            	document.querySelector('#menuTable').innerHTML = "There was an error, or menu items not found";
+            	document.querySelector('#majorTable').innerHTML = "There was an error, or major items not found";
         	}
 		}
 
