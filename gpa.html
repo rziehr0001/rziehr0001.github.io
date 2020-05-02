@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><title>stdnts </title>
+<html><head><title>gpa</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
@@ -32,17 +32,15 @@
                   <th>id</th>
                   <th>first_name</th>
                   <th>last_name</th>
-                  <th>credit_hrs</th>
-                  <th>gpa_points</th>
-                  <th>major</th>
+                  <th>gpa</th>
+
               </tr>
               <tr ng-repeat = "stdnt in stdnts | filter:search_text ">
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{stdnt.credit_hrs}}</td>
-                  <td>{{stdnt.gpa_points}}</td>
-                  <td>{{stdnt.major}}</td>
+                  <td>{{stdnt.gpa}}</td>
+
       
               </tr>
          </table>
