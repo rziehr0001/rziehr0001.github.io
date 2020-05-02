@@ -32,18 +32,15 @@
                   <th>id</th>
                   <th>first_name</th>
                   <th>last_name</th>
-                  <th>credit_hrs</th>
-                  <th>gpa_points</th>
-                  <th>major>
- 
+                  <th>gpa</th>
+
               </tr>
               <tr ng-repeat = "stdnt in stdnts | filter:search_text ">
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{stdnt.credit_hrs}}</td>
-                  <td>{{stdnt.gpa_points}}</td>
-                  <td>{{stdnt.major}}</td>
+                  <td>{{stdnt.gpa}}</td>
+
       
               </tr>
          </table>
