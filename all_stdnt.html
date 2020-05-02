@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html><head><title>cars 4 sale</title>
+<html><head><title>stdnts 4 sale</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script> 
 </head>
 
-<body ng-app = "carsApp">
+<body ng-app = "stdntsApp">
 
 <div class="container">
 <nav class="navbar navbar-inverse">
@@ -17,7 +17,7 @@
     <div>
        <ul class="nav navbar-nav">
            <li class="active"><a href="index.html">Welcome</a></li>
-           <li><a href="all_stdnt.html">All the Cars</a></li>
+           <li><a href="all_stdnt.html">All the stdnts</a></li>
        </ul>
     </div>
 
@@ -25,7 +25,7 @@
 
 <div ng-controller = "allCtrl">
 
-<h2>All Cars</h2>
+<h2>All stdnts</h2>
           <p><input type='text' ng-model='search_text' > Enter Search text</p>
           <table class="table table-bordered table-striped">
               <tr>
@@ -37,29 +37,29 @@
                   <th>price</th>
                   <th>dealer</th>
               </tr>
-              <tr ng-repeat = "car in cars | filter:search_text ">
-                  <td>{{car.id}}</td>
-                  <td>{{car.year}}</td>
-                  <td>{{car.make}}</td>
-                  <td>{{car.model}}</td>
-                  <td>{{car.miles}}</td>
-                  <td>{{car.price | currency}}</td>
-                  <td>{{car.dealer}}</td>
+              <tr ng-repeat = "stdnt in stdnts | filter:search_text ">
+                  <td>{{stdnt.id}}</td>
+                  <td>{{stdnt.year}}</td>
+                  <td>{{stdnt.make}}</td>
+                  <td>{{stdnt.model}}</td>
+                  <td>{{stdnt.miles}}</td>
+                  <td>{{stdnt.price | currency}}</td>
+                  <td>{{stdnt.dealer}}</td>
               </tr>
          </table>
 
-</div>   <!-- end carsApp -->
+</div>   <!-- end stdntsApp -->
 </div>   <!-- end class= 'container' -->
 
 <script>
-var app = angular.module('carsApp', []);
+var app = angular.module('stdntsApp', []);
 	  
 		  
 app.controller('allCtrl', function($scope, $http) {
     
-   $http.get("students.json")          // get all the cars table
+   $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
-	    $scope.cars = response.data;  
+	    $scope.stdnts = response.data;  
      });
 
 });
