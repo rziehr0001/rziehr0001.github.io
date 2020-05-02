@@ -33,8 +33,8 @@
                   <th>first_name</th>
                   <th>last_name</th>
                   <th>credit_hrs</th>
-                  <th>mgpa_points</th>
-                  <th>majorth>
+                  <th>gpa_points</th>
+                  <th>major>
  
               </tr>
               <tr ng-repeat = "stdnt in stdnts | filter:search_text ">
@@ -43,7 +43,7 @@
                   <td>{{stdnt.last_name}}</td>
                   <td>{{stdnt.credit_hrs}}</td>
                   <td>{{stdnt.gpa_points}</td>
-                  <td>{{stdnt.major | currency}}</td>
+                  <td>{{stdnt.major}}</td>
       
               </tr>
          </table>
