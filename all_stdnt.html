@@ -57,7 +57,7 @@ var app = angular.module('carsApp', []);
 		  
 app.controller('allCtrl', function($scope, $http) {
     
-   $http.get("cars.json")          // get all the cars table
+   $http.get("students.json")          // get all the cars table
      .then(function (response) {
 	    $scope.cars = response.data;  
      });
