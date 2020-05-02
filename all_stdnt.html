@@ -30,21 +30,21 @@
           <table class="table table-bordered table-striped">
               <tr>
                   <th>id</th>
-                  <th>year</th>
-                  <th>make</th>
-                  <th>model</th>
-                  <th>miles</th>
-                  <th>price</th>
-                  <th>dealer</th>
+                  <th>first_name</th>
+                  <th>last_name</th>
+                  <th>credit_hrs</th>
+                  <th>mgpa_points</th>
+                  <th>majorth>
+ 
               </tr>
               <tr ng-repeat = "stdnt in stdnts | filter:search_text ">
                   <td>{{stdnt.id}}</td>
-                  <td>{{stdnt.year}}</td>
-                  <td>{{stdnt.make}}</td>
-                  <td>{{stdnt.model}}</td>
-                  <td>{{stdnt.miles}}</td>
-                  <td>{{stdnt.price | currency}}</td>
-                  <td>{{stdnt.dealer}}</td>
+                  <td>{{stdnt.first_name}}</td>
+                  <td>{{stdnt.last_name}}</td>
+                  <td>{{stdnt.credit_hrs}}</td>
+                  <td>{{stdnt.gpa_points}</td>
+                  <td>{{stdnt.major | currency}}</td>
+      
               </tr>
          </table>
 
