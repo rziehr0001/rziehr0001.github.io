@@ -4,11 +4,9 @@
  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.1/angular.min.js"></script> 
-	
 </head>
 
 <body ng-app = "stdntsApp">
-	
 
 <div class="container">
 <nav class="navbar navbar-inverse">
@@ -41,7 +39,7 @@
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{avg}}</td>
+                  <td>{{stdnt.gpa/stdnt.credit_hrs}}</td>
 
       
               </tr>
@@ -51,17 +49,15 @@
 </div>   <!-- end class= 'container' -->
 
 <script>
-	var avg =  stdnt.gpa /stdnt.credit_hrs;
 var app = angular.module('stdntsApp', []);
-
+	  
 		  
 app.controller('allCtrl', function($scope, $http) {
     
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
-	    
-        			
+        $scope.calc= stdnt.gpa/stdnt.credit_hrs;			
      });
 
 });
