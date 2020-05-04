@@ -8,7 +8,7 @@
 </head>
 
 <body ng-app = "stdntsApp">
-	var ave = stdnt.gpa/stdnt.credit_hrs;
+	
 
 <div class="container">
 <nav class="navbar navbar-inverse">
@@ -51,6 +51,7 @@
 </div>   <!-- end class= 'container' -->
 
 <script>
+	var avg =  stdnt.gpa /stdnt.credit_hrs;
 var app = angular.module('stdntsApp', []);
 
 		  
@@ -59,7 +60,7 @@ app.controller('allCtrl', function($scope, $http) {
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
-	    var avg =  stdnt.gpa /stdnt.credit_hrs;
+	    
         			
      });
 
