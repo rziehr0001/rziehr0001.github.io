@@ -56,7 +56,8 @@ app.controller('allCtrl', function($scope, $http) {
     
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
-	    $scope.stdnts = response.data;  
+	    $scope.stdnts = response.data;
+        $scope.calc= stdnt.gpa/stdnt.credit_hrs;			
      });
 
 });
