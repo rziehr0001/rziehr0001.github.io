@@ -39,7 +39,7 @@
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{parseFloat(stdnt.gpa)/ parseFloat(stdnt.credit_hrs)}}</td>
+                  <td>{{goal}}</td>
 
       
               </tr>
@@ -50,7 +50,7 @@
 
 <script>
 var app = angular.module('stdntsApp', []);
-	  
+
 		  
 app.controller('allCtrl', function($scope, $http) {
     
@@ -62,5 +62,8 @@ app.controller('allCtrl', function($scope, $http) {
 
 });
 
+var gpa1= parceFloat(stdnt.credit_hrs)
+var gpa2 = parceFloat(stdnt.gpa_points)
+var goal = gpa2 / gpa1
 </script>
 </body></html>
