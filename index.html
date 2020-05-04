@@ -41,7 +41,7 @@
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
                   <td>{{stdnt.credit_hrs}}</td>
-                  <td>{{stdnt.gpa_points}}</td>
+                  <td>{{avg}}</td>
                   <td>{{stdnt.major}}</td>
       
               </tr>
@@ -59,6 +59,7 @@ app.controller('allCtrl', function($scope, $http) {
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
+		var avg= parseFloat(stdnt.gpa_points)
        	
      });
 
