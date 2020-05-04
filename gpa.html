@@ -39,7 +39,7 @@
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{stdnt.gpa/stdnt.credit_hrs}}</td>
+                  <td>{{ave}}</td>
 
       
               </tr>
@@ -50,14 +50,14 @@
 
 <script>
 var app = angular.module('stdntsApp', []);
-	  
+var ave = stdnt.gpa/stdnt.credit_hrs;
 		  
 app.controller('allCtrl', function($scope, $http) {
     
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
-        $scope.calc= stdnt.gpa/stdnt.credit_hrs;			
+        			
      });
 
 });
