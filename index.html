@@ -40,9 +40,9 @@
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{avg2}}</td>
-                  <td>{{avg1}}</td>
-                  <td>{{avg3}}</td>
+                  <td>{{stdnt.credit_hrs}}</td>
+                  <td>{{stdnt.gpa_points}}</td>
+                  <td>{{stdnt.major}}</td>
       
               </tr>
          </table>
@@ -59,9 +59,8 @@ app.controller('allCtrl', function($scope, $http) {
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
-		$scope.avg1= parseFloat(stdnt.gpa)
-       	$scope.avg2= parseFloat(stdnt.credit_hrs)
-		$scope.avg3= (stdnt.credit_hrs+stdnt.gpa)/2
+		
+       	
      });
 
 });
