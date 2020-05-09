@@ -39,7 +39,7 @@
                   <td>{{stdnt.id}}</td>
                   <td>{{stdnt.first_name}}</td>
                   <td>{{stdnt.last_name}}</td>
-                  <td>{{goal}}</td>
+                  <td>{{stdnt.gpa_points+stdnt.gpa_credit_hrs)/2}}</td>
 
       
               </tr>
@@ -57,9 +57,7 @@ app.controller('allCtrl', function($scope, $http) {
    $http.get("students.json")          // get all the stdnts table
      .then(function (response) {
 	    $scope.stdnts = response.data;
-	   var gpa1= parceFloat(stdnt.credit_hrs)
-           var gpa2 = parceFloat(stdnt.gpa_points)
-           var goal = gpa2 / gpa1
+
         			
      });
 
