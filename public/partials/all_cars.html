@@ -1,0 +1,23 @@
+            
+     <h2>All Students</h2>
+          <p><input type='text' ng-model='search_value' > Enter Search text</p>
+          <table class="table table-bordered table-striped">
+              <tr>
+                    <th>Sid</th>
+                  <th>Name</th>
+                  <th>Major</th>
+                  <th>Miterm</th>
+                  <th>Final</th>
+                 <th>Average</th>
+              </tr>
+              <tr ng-repeat = "car in cars | filter : search_value ">
+                  <td>{{car.sid}}</td>
+                  <td>{{car.last_name}}</td>
+                  <td>{{car.major}}</td>
+                  <td>{{car.midterm}}</td>
+                  <td>{{car.final}}</td>
+                  <td>{{   ((car.midterm + car.final)/2)   }}</td>
+                 
+              </tr>
+         </table>
+           

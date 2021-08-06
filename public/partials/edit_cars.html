@@ -1,0 +1,30 @@
+          
+            <h4>Edit Record {{carIndex + 1}} of {{maxIndex + 1}}</h4>
+            
+            <div class="form-group">
+                <label for="sid">SID:</label>
+                <input type="text" class="form-control" id="sid" ng-model="car.sid" readonly>
+			<div class="form-group">
+                <label for="last_name">last_name:</label>
+                <input type="text" class="form-control" id="last_name" ng-model="car.last_name" >
+           </div>
+           <div class="form-group">
+                <label for="major">Major:</label>
+                <input type="text" class="form-control" id="major" ng-model="car.major" >
+           </div>
+           <div class="form-group">
+                <label for="midterm">midterm:</label>
+                <input type="text" class="form-control" id="midterm" ng-model="car.midterm" >
+           </div>
+           <div class="form-group">
+                <label for="final">Final:</label>
+                <input type="text" class="form-control" id="final" ng-model="car.final">
+           </div>
+
+           </div>
+           <button type="button" class="btn btn-primary" ng-click="previousRecord()"> < previous </button> &nbsp; 
+           <button type="button" class="btn btn-primary" ng-click="nextRecord()"> next ></button> &nbsp; 
+           <button type="button" class="btn btn-primary" ng-click="updateRecord()">Update</button> &nbsp; 
+           <button type="button" class="btn btn-primary" ng-click="deleteRecord()">Delete</button>
+        <br><br>
+

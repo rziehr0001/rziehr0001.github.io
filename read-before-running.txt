@@ -1,0 +1,23 @@
+run npm init -y
+run npm install express --save
+run npm install mongoose --save
+run npm install body-parser --save
+
+mongod needs to be running locally
+
+
+Database name: cars4sale
+Model name: Car
+
+
+
+property names and types for the model
+
+cid: Number, unique
+year: Number
+make: String
+model: String
+miles: Number
+price: Number
+dealer_id: String
+
